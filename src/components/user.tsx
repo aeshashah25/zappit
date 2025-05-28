@@ -111,10 +111,6 @@ export function User() {
     });
   }, []);
 
-<<<<<<< HEAD
-=======
-  // Auto-change steps every 3 seconds
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
   useEffect(() => {
     const interval = setInterval(() => {
       setSelectedStep((prev) => (prev === 6 ? 1 : prev + 1));
@@ -122,10 +118,6 @@ export function User() {
     return () => clearInterval(interval);
   }, []);
 
-<<<<<<< HEAD
-=======
-  // Animate content from bottom on selectedStep change
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
   useEffect(() => {
     if (contentRef.current) {
       gsap.fromTo(
@@ -136,7 +128,6 @@ export function User() {
     }
   }, [selectedStep]);
 
-<<<<<<< HEAD
   return (
  <div
   className="relative w-full h-auto md:min-h-screen aspect-[16/9] md:aspect-auto bg-cover bg-center bg-no-repeat mb-10"
@@ -249,93 +240,4 @@ export function User() {
       </style>
     </div>
   );
-=======
-return (
-<div className="w-full px-4 py-10 md:py-16 bg-white/50 backdrop-blur-sm rounded-xl shadow-xl max-w-7xl mx-auto mb-8">
-  <h2 className="text-3xl font-extrabold text-[#1f2b6c] text-center mb-10 tracking-tight">
-    User Challenges & Solutions
-  </h2>
-
-  <div className="row flex flex-col-reverse md:flex-row items-center justify-center gap-6 md:gap-10">
-    
-    {/* Text Content */}
-    <div
-      ref={contentRef}
-      className="col w-full md:w-6/12 text-center px-2 md:px-4"
-    >
-      <h3 className="text-lg md:text-4xl lg:text-5xl font-bold text-[#ff6600] mb-3 tracking-wide leading-tight">
-        {stepContents[selectedStep - 1].title}
-      </h3>
-      <p className="text-[#1f2b6c] text-sm md:text-base lg:text-lg italic font-medium leading-relaxed max-w-xl mx-auto">
-        {stepContents[selectedStep - 1].description}
-      </p>
-    </div>
-
-    {/* 3D Canvas */}
-    <div className="col w-full md:w-6/12 h-[360px] md:h-[500px] flex justify-center items-center z-10">
-      <Canvas camera={{ position: [0, 0, 30], fov: 45 }}>
-        <ambientLight intensity={1} />
-        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
-
-        {/* Step Circles */}
-        {steps.map((step, i) => {
-          const stepsCount = steps.length;
-const angle = (-Math.PI / 2) + (i * Math.PI) / (stepsCount - 1); // original: top-left-bottom (counter-clockwise)
-          const x = arcRadius * Math.cos(angle);
-          const y = arcRadius * Math.sin(angle);
-
-          return (
-            <Html key={step.id} position={[x, y, 0]} center>
-              <div
-                ref={(el) => (stepRefs.current[i] = el)}
-                onClick={() => setSelectedStep(step.id)}
-                className="flex flex-col items-center space-y-1 group"
-              >
-                <div
-                  className={`w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center cursor-pointer transition-transform duration-300 ${
-                    selectedStep === step.id ? "scale-110" : ""
-                  }`}
-                  style={{
-                    background:
-                      selectedStep === step.id
-                        ? "radial-gradient(circle at center, #ff7e00, #ff6600)"
-                        : "radial-gradient(circle at center, #ff9a3c, #ff6600)",
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: "1rem",
-                    boxShadow: "0 0 12px rgba(255, 102, 0, 0.8)",
-                    border: "4px solid #fff",
-                  }}
-                >
-                  {step.id}
-                </div>
-                <div className="text-[10px] md:text-sm text-center text-[#1f2b6c] max-w-[90px] md:max-w-[140px] font-semibold leading-snug tracking-tight">
-                  {stepContents[step.id - 1].title}
-                </div>
-              </div>
-            </Html>
-          );
-        })}
-
-        {/* Center Circle */}
-        <Html center position={[0, 0, 0]}>
-          <div
-            ref={circleRef}
-            className="w-28 h-28 md:w-52 md:h-52 bg-[#1f2b6c] rounded-full flex flex-col items-center justify-center text-center border-[6px] md:border-[8px] border-[#0b4b8e]"
-          >
-            <div className="text-white font-bold text-sm md:text-xl leading-tight tracking-wide">
-              Zaapit <br /> 6's <br /> Approach
-            </div>
-          </div>
-        </Html>
-      </Canvas>
-    </div>
-  </div>
-</div>
-
-);
-
-
-
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
 }
