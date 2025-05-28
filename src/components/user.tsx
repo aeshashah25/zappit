@@ -2,11 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-<<<<<<< HEAD
 import { Html, OrbitControls, Stars } from "@react-three/drei";
-=======
-import { Html, OrbitControls } from "@react-three/drei";
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -47,10 +43,6 @@ const stepContents = [
 
 const steps = Array.from({ length: 6 }, (_, i) => ({
   id: i + 1,
-<<<<<<< HEAD
-=======
-  angle: (-Math.PI / 2) + (i * Math.PI) / 5,
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
 }));
 
 const arcRadius = 9.5;
@@ -60,7 +52,6 @@ export function User() {
   const contentRef = useRef(null);
   const circleRef = useRef(null);
   const stepRefs = useRef([]);
-<<<<<<< HEAD
   const titleRef = useRef(null);
   stepRefs.current = [];
 
@@ -76,16 +67,6 @@ export function User() {
       scrollTrigger: {
         trigger: circleRef.current,
         start: "top 80%",
-=======
-  stepRefs.current = [];
-
-  // Add one-time scroll-triggered animations
-  useEffect(() => {
-    gsap.from(circleRef.current, {
-      scrollTrigger: {
-        trigger: circleRef.current,
-        start: "top 80% ",
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
       },
       rotation: 360,
       duration: 1,
@@ -96,11 +77,7 @@ export function User() {
       gsap.from(el, {
         scrollTrigger: {
           trigger: el,
-<<<<<<< HEAD
           start: "top 90%",
-=======
-          start: "top 90% ",
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
         },
         y: 50,
         opacity: 0,
