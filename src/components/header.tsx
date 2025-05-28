@@ -48,11 +48,7 @@ export function Header() {
         </div>
 
         {/* Desktop navigation */}
-<<<<<<< HEAD
         <nav className="hidden md:flex space-x-4 mx-auto">
-=======
-        <nav className="hidden md:flex space-x-4">
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
           <Link href="#banner" className="text-[#1f2b6c] hover:text-orange-500">Banner</Link>
           <Link href="#user" className="text-[#1f2b6c] hover:text-orange-500">User</Link>
           <Link href="#user_app" className="text-[#1f2b6c] hover:text-orange-500">User App</Link>
