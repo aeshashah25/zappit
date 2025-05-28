@@ -4,11 +4,7 @@ import { User } from "@/components/user";
 import { UserApp } from "@/components/user_app";
 import Manager from "@/components/manager";
 import { ManagerApp } from "@/components/manager_app";
-<<<<<<< HEAD
 import Footer  from "@/components/footer";
-=======
-import { Footer } from "@/components/footer";
->>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
 
 export default function Home() {
   return (
