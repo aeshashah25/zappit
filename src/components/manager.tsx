@@ -51,6 +51,7 @@ export default function Manager() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div className="relative w-full min-h-[600px] flex justify-center items-center py-10 md:py-14 mb-10">
       {/* Background Image + Blur */}
       <div
@@ -83,6 +84,25 @@ export default function Manager() {
             </div>
           ))}
         </div>
+=======
+  <div className="w-full px-4 py-10 md:py-14 bg-white/40 backdrop-blur-sm rounded-xl shadow-xl max-w-7xl mx-auto ">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-[#1f2b6c] text-center mb-8 tracking-tight">
+        Manager Challenges & Solutions
+      </h2>
+
+      <div className="mt-1 px-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {solutions.map((item, idx) => (
+          <div
+            key={idx}
+            ref={(el) => (cardsRef.current[idx] = el)}
+            className="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#ff6600] hover:-translate-y-1 transition-transform duration-300 flex flex-col items-center text-center space-y-4"
+          >
+            <h3 className="text-xl font-semibold text-[#1f2b6c]">{item.title}</h3>
+            <FaArrowDown className="text-[#ff6600] text-lg" />
+            <p className="text-gray-700 text-sm">{item.description}</p>
+          </div>
+        ))}
+>>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
       </div>
     </div>
   );

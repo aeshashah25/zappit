@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -89,3 +90,8 @@ export default function Footer() {
     </>
   );
 }
+=======
+export function Footer() {
+  return <footer></footer>;
+}
+>>>>>>> 87252843c6b89338908a95b4b759570e3cbe1c62
